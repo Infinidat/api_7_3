@@ -611,6 +611,42 @@
 			"response": []
 		},
 		{
+			"name": "HOST Create",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e5fba717-fbf4-4124-a4bc-69581b359bcf",
+						"exec": [
+							"pm.test(\"Status code is 200\", () => {\r",
+							"    pm.response.to.have.status(200);\r",
+							"})\r",
+							"\r",
+							"// console.log(pm.collectionVariables.get(\"apiVersion\"));\r",
+							"pm.test(\"InfiniBox API version is correct\", ()=>{\r",
+							"    pm.expect(pm.response.headers.get('X-INFINIDAT-VERSION')).to.include(pm.collectionVariables.get(\"apiVersion\"));\r",
+							"})\r",
+							"\r",
+							"const responseJson = pm.response.json();\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "05ee3978-5ea4-4db8-a0a1-861ac2283ccf",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": "{{sutURI}}/hosts"
+			},
+			"response": []
+		},
+		{
 			"name": "LDAP Create a User Repository",
 			"event": [
 				{

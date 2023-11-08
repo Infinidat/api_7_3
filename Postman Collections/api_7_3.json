@@ -642,6 +642,10 @@
 			"request": {
 				"method": "POST",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"auto-Host4Test-b961d0cf-c5\"\r\n}"
+				},
 				"url": "{{sutURI}}/hosts"
 			},
 			"response": []
